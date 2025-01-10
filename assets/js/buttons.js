@@ -8,7 +8,6 @@ const generateFirstButtonsContainer = () => {
 		let item = `
         <a
           href="${button.link}"
-          ${CONFIG.openInNewTab ? 'target="_blank' : ''"
           class="card button button__${button.id}"
         >
           <i class="buttonIcon" icon-name="${button.icon}"></i>
