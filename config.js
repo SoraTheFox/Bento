@@ -21,7 +21,7 @@ const CONFIG = {
 	// General
 	name: 'Sora',
 	imageBackground: false,
-	openInNewTab: true,
+	openInNewTab: false,
 	twelveHourFormat: false,
 
 	// Greetings
