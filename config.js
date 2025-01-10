@@ -4,7 +4,14 @@
 // ┌─┐┌─┐┌┐┌┌─┐┬┌─┐┬ ┬┬─┐┌─┐┌┬┐┬┌─┐┌┐┌
 // │  │ ││││├┤ ││ ┬│ │├┬┘├─┤ │ ││ ││││
 // └─┘└─┘┘└┘└  ┴└─┘└─┘┴└─┴ ┴ ┴ ┴└─┘┘└┘
-var api = process.env.WeatherAPI
+const getKey = (name) => {
+	key = localStorage.getItem(name);
+	if (!key) {
+		key = prompt(name);
+		localStorage.setItem(name, key);
+	}
+	return key;
+}
 
 const CONFIG = {
 	// ┌┐ ┌─┐┌─┐┬┌─┐┌─┐
@@ -27,7 +34,7 @@ const CONFIG = {
 	bentoLayout: 'bento', // 'bento', 'lists', 'buttons'
 
 	// Weather
-	weatherKey: api, // Write here your API Key
+	weatherKey: getKey('weatherKey'), // Write here your API Key
 	weatherIcons: 'OneDark', // 'Onedark', 'Nord', 'Dark', 'White'
 	weatherUnit: 'C', // 'F', 'C'
 	language: 'en', // More languages in https://openweathermap.org/current#multi
